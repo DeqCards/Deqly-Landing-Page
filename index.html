@@ -849,50 +849,18 @@
       var dots  = document.querySelectorAll('#showcaseDots .showcase-dot');
       var total = 9;
       var gap   = 20;
-
-      /* Clone all slides before and after for true infinite loop */
-      var slides = Array.from(track.querySelectorAll('.showcase-carousel-slide'));
-      slides.forEach(function(s) { track.appendChild(s.cloneNode(true)); });
-      var beforeClones = document.createDocumentFragment();
-      slides.forEach(function(s) { beforeClones.appendChild(s.cloneNode(true)); });
-      track.insertBefore(beforeClones, track.firstChild);
-
-      /* Start at real first slide (offset by total clones prepended) */
-      var current = total;
+      var current = 0;
       var startX = 0, startY = 0, isDragging = false, dragDelta = 0;
 
-      function setPos(idx, animate) {
-        track.style.transition = animate ? 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)' : 'none';
-        track.style.transform  = 'translateX(calc(-' + (idx * 100) + '% - ' + (idx * gap) + 'px))';
-      }
-
-      function updateDots(idx) {
-        var dotIdx = ((idx % total) + total) % total;
-        dots.forEach(function(d, i) { d.classList.toggle('active', i === dotIdx); });
-      }
-
-      /* Silent jump after transition — keeps loop seamless */
-      track.addEventListener('transitionend', function() {
-        if (current < total) {
-          current += total;
-          setPos(current, false);
-        } else if (current >= total * 2) {
-          current -= total;
-          setPos(current, false);
-        }
-      });
-
       function goTo(idx) {
-        current = idx;
-        setPos(current, true);
-        updateDots(current);
+        current = Math.max(0, Math.min(total - 1, idx));
+        track.style.transition = 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)';
+        track.style.transform  = 'translateX(calc(-' + (current * 100) + '% - ' + (current * gap) + 'px))';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
       }
-
-      setPos(current, false);
-      updateDots(current);
 
       dots.forEach(function(d) {
-        d.addEventListener('click', function() { goTo(parseInt(d.dataset.idx) + total); });
+        d.addEventListener('click', function() { goTo(parseInt(d.dataset.idx)); });
       });
 
       /* Touch */
