@@ -35,7 +35,7 @@
     /* ── Buttons ── */
     .btn-primary {
       background: #FF3826; color: #fff;
-      border-radius: 999px; padding: 14px 28px;
+      border-radius: 999px; padding: 14px 34px;
       font-weight: 700; font-size: 15px; letter-spacing: -0.01em;
       display: inline-block;
       transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
@@ -47,7 +47,7 @@
 
     .btn-outline {
       background: transparent; color: #0A0A0A;
-      border-radius: 999px; padding: 13px 28px;
+      border-radius: 999px; padding: 13px 34px;
       font-weight: 600; font-size: 15px;
       border: 1.5px solid rgba(10,10,10,0.18);
       display: inline-block;
@@ -86,6 +86,9 @@
     .feat-card:hover { border: 2px solid #7C4DFF; transform: translateY(-5px); box-shadow: 0 14px 40px rgba(124,77,255,0.15); }
     .feat-card { text-align: center; }
     .feat-f1-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+    .feat-f4-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+    .feat-f4-img-wrap { display: flex; align-items: center; justify-content: center; }
+    .feat-f4-img { width: 81%; display: block; border-radius: 12px; margin: 0 auto; }
     .feat-card .color-dots { justify-content: center; }
 
     /* ── Showcase card ── */
@@ -245,7 +248,7 @@
 
     /* Mobile: 20% reduction */
     @media (max-width: 580px) {
-      .h-hero        { font-size: 64px; }
+      .h-hero        { font-size: 58px; }
       .h-features    { font-size: 45px; }
       .h-how         { font-size: 42px; }
       .h-showcase    { font-size: 43px; }
@@ -365,9 +368,14 @@
       display: none;
       position: relative;
       width: 100%;
-      max-width: 300px;
+      max-width: 100%;
       margin: 0 auto;
       user-select: none;
+    }
+    .showcase-carousel-clip {
+      width: 100%;
+      overflow: hidden;
+      padding: 12px 4px 20px;
     }
     .showcase-carousel-track {
       display: flex;
@@ -379,7 +387,7 @@
       margin-right: 20px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07), 0 2px 6px rgba(0,0,0,0.04);
     }
     .showcase-carousel-slide img {
       width: 100%;
@@ -459,6 +467,8 @@
       .fan-icon-tr { width: 55px; height: 55px; top: 44px; right: -22px; }
       .fan-icon-ml { width: 60px; height: 60px; top: 140px; left: -22px; }
       .fan-icon-br { bottom: 50px; right: -22px; }
+      .hero-heading h1 { text-align: center; }
+      .hero-body p { text-align: center; }
 
       /* Features */
       .features-grid { grid-template-columns: 1fr; }
@@ -466,6 +476,11 @@
       .feat-f1-inner { grid-template-columns: 1fr; }
       .feat-f3 { order: 2; }
       .feat-f2 { order: 3; }
+      .feat-f4 { order: 4; }
+      .feat-f4-inner { grid-template-columns: 1fr; gap: 0px; }
+      .feat-f4-inner > div:first-child { text-align: center; padding-bottom: 0; }
+      .feat-f4-img-wrap { align-items: center; justify-content: center; }
+      .feat-f4-img { content: url('brand_assets/Deqly-Illustration.png'); border-radius: 12px; width: 77%; margin: 0 auto; display: block; }
       .feat-decks-img { content: url('brand_assets/Features-Decks-Mobile.png'); width: 70% !important; margin: 0 auto; }
       .feat-card-choice-img { content: url('brand_assets/Card-Choice.png'); width: 56% !important; margin-bottom: 27px !important; }
 
@@ -529,9 +544,9 @@
             You’re more than just a name and number — Deqly gives you the space to show it. Create multiple cards with pages for your story and your visuals, each one representing a different side of who you are.
           </p>
 
-          <div class="fade-up delay-3" style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="#" class="btn-primary">Create your card free</a>
-            <a href="#showcase" class="btn-outline">See examples ↓</a>
+          <div class="fade-up delay-3" style="display: flex; flex-direction: column; gap: 12px; align-items: center; width: fit-content; margin: 0 auto;">
+            <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Create your card free</a>
+            <a href="#showcase" class="btn-outline" style="width: 100%; text-align: center;">See examples ↓</a>
           </div>
         </div>
         <!-- ── END BODY ── -->
@@ -618,15 +633,15 @@
         </div>
 
         <!-- F4 -->
-        <div class="feat-card feat-span2" style="background: #CCFF33; border-color: transparent;">
-          <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">All your links, one place</h3>
-          <p style="color: rgba(0,0,0,0.6); line-height: 1.46; font-size: 16px;">Instagram, LinkedIn, Calendly — all in one card. No more "just DM me" awkwardness.</p>
-          <div style="margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-            <div style="background: #f0f0f0; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: rgba(10,10,10,0.6); font-weight: 500;">Instagram</div>
-            <div style="background: #f0f0f0; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: rgba(10,10,10,0.6); font-weight: 500;">LinkedIn</div>
-            <div style="background: #f0f0f0; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: rgba(10,10,10,0.6); font-weight: 500;">TikTok</div>
-            <div style="background: #f0f0f0; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: rgba(10,10,10,0.6); font-weight: 500;">Calendly</div>
-            <div style="background: #f0f0f0; border-radius: 8px; padding: 5px 10px; font-size: 12px; color: rgba(10,10,10,0.6); font-weight: 500;">+ 30 more</div>
+        <div class="feat-card feat-span2 feat-f4" style="background: #CCFF33; border-color: transparent;">
+          <div class="feat-f4-inner">
+            <div style="padding: 8px 12px; padding-bottom: 28px;">
+              <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">Easily share cards without wasting money</h3>
+              <p style="color: rgba(0,0,0,0.6); line-height: 1.46; font-size: 16px;">There is no need to print multiple things. Your digital cards can act as your name card, your fliers and even a poster </p>
+            </div>
+            <div class="feat-f4-img-wrap">
+              <img src="brand_assets/Deqly-Illustration.png" alt="Deqly illustration" class="feat-f4-img" />
+            </div>
           </div>
         </div>
 
@@ -660,15 +675,17 @@
 
       <!-- Mobile swipeable carousel -->
       <div class="showcase-carousel-wrap" id="showcaseCarousel">
-        <div class="showcase-carousel-track" id="showcaseTrack">
-          <div class="showcase-carousel-slide">
-            <img src="brand_assets/Card-01.png" alt="Deqly card" />
-          </div>
-          <div class="showcase-carousel-slide">
-            <img src="brand_assets/Sample-Frame-01.png" alt="Deqly card sample" />
-          </div>
-          <div class="showcase-carousel-slide">
-            <img src="brand_assets/Sample-Frame-02.png" alt="Deqly card sample" />
+        <div class="showcase-carousel-clip">
+          <div class="showcase-carousel-track" id="showcaseTrack">
+            <div class="showcase-carousel-slide">
+              <img src="brand_assets/Card-01.png" alt="Deqly card" />
+            </div>
+            <div class="showcase-carousel-slide">
+              <img src="brand_assets/Sample-Frame-01.png" alt="Deqly card sample" />
+            </div>
+            <div class="showcase-carousel-slide">
+              <img src="brand_assets/Sample-Frame-02.png" alt="Deqly card sample" />
+            </div>
           </div>
         </div>
         <div class="showcase-carousel-dots" id="showcaseDots">
@@ -823,19 +840,27 @@
       });
 
       /* Touch */
-      track.addEventListener('touchstart', function(e) {
+      var startY = 0;
+      var clip = wrap.querySelector('.showcase-carousel-clip');
+      clip.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
         isDragging = true;
         track.style.transition = 'none';
       }, { passive: true });
 
-      track.addEventListener('touchmove', function(e) {
+      clip.addEventListener('touchmove', function(e) {
         if (!isDragging) return;
-        dragDelta = e.touches[0].clientX - startX;
-        track.style.transform = 'translateX(calc(-' + (current * 100) + '% - ' + (current * 20) + 'px + ' + dragDelta + 'px))';
-      }, { passive: true });
+        var dx = e.touches[0].clientX - startX;
+        var dy = e.touches[0].clientY - startY;
+        if (Math.abs(dx) > Math.abs(dy)) {
+          e.preventDefault();
+          dragDelta = dx;
+          track.style.transform = 'translateX(calc(-' + (current * 100) + '% - ' + (current * 20) + 'px + ' + dragDelta + 'px))';
+        }
+      }, { passive: false });
 
-      track.addEventListener('touchend', function() {
+      clip.addEventListener('touchend', function() {
         isDragging = false;
         track.style.transition = 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)';
         if (dragDelta < -50) goTo(current + 1);
