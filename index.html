@@ -28,7 +28,7 @@
 
     /* ── Gradient text ── */
     .grad-text {
-      background: linear-gradient(130deg, #FF3826 0%, #FF7B59 45%, #CCFF33 100%);
+      background: linear-gradient(130deg, #FF3826 0%, #A67EFF 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -62,10 +62,9 @@
       border-radius: 999px; padding: 16px 36px;
       font-weight: 700; font-size: 16px;
       display: inline-block;
-      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
-      box-shadow: 0 4px 18px rgba(204,255,51,0.35);
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
     }
-    .btn-lime:hover { transform: scale(1.05); box-shadow: 0 8px 28px rgba(204,255,51,0.5); }
+    .btn-lime:hover { transform: scale(1.05); }
     .btn-lime:active { transform: scale(0.97); }
     .btn-lime:focus-visible { outline: 3px solid #7a9c00; outline-offset: 3px; }
 
@@ -294,8 +293,9 @@
     .hero-heading {
       grid-column: 1; grid-row: 1;
       align-self: end;
-      padding-bottom: 20px;
+      padding-bottom: 0px;
     }
+    .hero-btns { display: flex; flex-direction: row; gap: 12px; align-items: center; }
     .hero-body {
       grid-column: 1; grid-row: 2;
       align-self: start;
@@ -469,6 +469,9 @@
       .fan-icon-br { bottom: 50px; right: -22px; }
       .hero-heading h1 { text-align: center; }
       .hero-body p { text-align: center; }
+      .hero-btns { flex-direction: column; align-items: center; width: fit-content; margin: 0 auto; }
+      .hero-btns a { width: 100%; }
+      .how-to-img { width: 20% !important; }
 
       /* Features */
       .features-grid { grid-template-columns: 1fr; }
@@ -482,7 +485,7 @@
       .feat-f4-img-wrap { align-items: center; justify-content: center; }
       .feat-f4-img { content: url('brand_assets/Deqly-Illustration.png'); border-radius: 12px; width: 77%; margin: 0 auto; display: block; }
       .feat-decks-img { content: url('brand_assets/Features-Decks-Mobile.png'); width: 70% !important; margin: 0 auto; }
-      .feat-card-choice-img { content: url('brand_assets/Card-Choice.png'); width: 56% !important; margin-bottom: 27px !important; }
+      .feat-card-choice-img { content: url('brand_assets/Card-Choice-03.png?v=3'); width: calc(74% + 20px) !important; margin-bottom: 27px !important; }
 
       /* Showcase */
       .showcase-grid { display: none; }
@@ -527,12 +530,12 @@
   <section id="hero">
 
   
-    <div class="container" style="padding-top: 60px; padding-bottom: 60px; position: relative;">
+    <div class="container" style="padding-top: 30px; padding-bottom: 60px; position: relative;">
       <div class="hero-grid">
 
         <!-- ── HEADING ── -->
         <div class="hero-heading">
-          <h1 class="fade-up delay-1 h-hero" style="font-weight: 700; line-height: 1.0; letter-spacing: -0.04em; color: #0A0A0A; margin-bottom: 20px;">
+          <h1 class="fade-up delay-1 h-hero" style="font-weight: 700; line-height: 1.0; letter-spacing: -0.04em; color: #0A0A0A; margin-bottom: 5px;">
             Too much you<br/><span class="grad-text">in one card</span>
           </h1>
         </div>
@@ -541,12 +544,12 @@
         <!-- ── BODY (p + buttons) ── -->
         <div class="hero-body">
           <p class="fade-up delay-2" style="font-size: 18px; color: rgba(10,10,10,0.55); line-height: 1.75; max-width: 420px; margin-bottom: 36px;">
-            You’re more than just a name and number — Deqly gives you the space to show it. Create multiple cards with pages for your story and your visuals, each one representing a different side of who you are.
+            You’re more than just a name and number — Deqly lets you create multiple cards with pages for you to tell story, show your experiences, and personality, all in one shareable digital profile.
           </p>
 
-          <div class="fade-up delay-3" style="display: flex; flex-direction: column; gap: 12px; align-items: center; width: fit-content; margin: 0 auto;">
-            <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Create your card free</a>
-            <a href="#showcase" class="btn-outline" style="width: 100%; text-align: center;">See examples ↓</a>
+          <div class="fade-up delay-3 hero-btns">
+            <a href="#" class="btn-primary" style="text-align: center;">Create your card free</a>
+            <a href="#showcase" class="btn-outline" style="text-align: center;">See examples ↓</a>
           </div>
         </div>
         <!-- ── END BODY ── -->
@@ -600,8 +603,8 @@
     <div class="container">
 
       <div style="text-align: center; margin-bottom: 56px;">
-        <h2 class="h-features" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Where your story takes shape,one card at a time</h2>
-        <p style="font-size: 20px; color: rgba(10,10,10,0.5); max-width: 700px; margin: 16px auto 0; line-height: 1.2;">Here’s how Deqly helps you make an impact — with features designed to showcase every side of you.</p>
+        <h2 class="h-features" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Where your story takes shape</h2>
+        <p style="font-size: 20px; color: rgba(10,10,10,0.5); max-width: 700px; margin: 16px auto 0; line-height: 1.2;">Here’s how Deqly helps you make an impact — giving every card the space to show more of you.</p>
       </div>
 
       <div class="features-grid">
@@ -610,8 +613,8 @@
         <div class="feat-card feat-span2" style="padding-bottom: 0;">
           <div class="feat-f1-inner">
             <div style="padding: 8px 12px;">
-              <h3 class="h-card-lg" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">You need more than a card to tell your story</h3>
-              <p style="color: rgba(10,10,10,0.5); line-height: 1.46; font-size: 17px;">Deqly enables you to create cards - so not only will have have a sharable contact card, you'll have something to share your experience,journey, profile. Think of it as a deck of cards!</p>
+              <h3 class="h-card-lg" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">You need more than one!.</h3>
+              <p style="color: rgba(10,10,10,0.5); line-height: 1.46; font-size: 18px;">With Deqly, create multiple cards — from contacts to your experience, journey, and profile all in one place.</p>
             </div>
             <div id="feat-image-placeholder" style="overflow: hidden; display: flex; align-items: flex-end; justify-content: center;">
               <img src="brand_assets/Features-Decks.png" alt="" class="feat-decks-img" style="width: 100%; display: block;" />
@@ -622,22 +625,22 @@
         <!-- F2 -->
         <div class="feat-card feat-f2" style="background: #4CC9F0; border-color: transparent; padding: 23px;">
           <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #fff;">A poet or a painter?</h3>
-          <p style="color: rgba(255,255,255,0.8); line-height: 1.46; font-size: 16px;">Shape your deck the way you want. Whether through words or images,<em>create something worth sharing</em>.</p>
-          <img src="brand_assets/Card-Choice-Icons.png" alt="" class="feat-card-choice-img" style="width: 90%; display: block; margin-top: 20px; margin-left: auto; margin-right: auto;" />
+          <p style="color: rgba(255,255,255,0.8); line-height: 1.46; font-size: 18px;">Shape your deck the way you want. Whether through words or images,<em>create something worth sharing</em>.</p>
+          <img src="brand_assets/Card-Choice-Icons.png?v=2" alt="" class="feat-card-choice-img" style="width: 90%; display: block; margin-top: 20px; margin-left: auto; margin-right: auto;" />
         </div>
 
         <!-- F3 -->
-        <div class="feat-card feat-f3" style="background: #FF3826; border-color: transparent;">
+        <div class="feat-card feat-f3" style="background: #FF3826; border-color: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
           <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #fff;">Treat it like a pitch deck</h3>
-          <p style="color: rgba(255,255,255,0.8); line-height: 1.46; font-size: 16px;">We built Deqly so you can create a bigger impression. A normal name card can't do what Delqy does!</p>
+          <p style="color: rgba(255,255,255,0.8); line-height: 1.46; font-size: 18px;">We built Deqly to help you make a bigger impression — because a normal name card just can’t do what Deqly does.</p>
         </div>
 
         <!-- F4 -->
         <div class="feat-card feat-span2 feat-f4" style="background: #CCFF33; border-color: transparent;">
           <div class="feat-f4-inner">
-            <div style="padding: 8px 12px; padding-bottom: 28px;">
-              <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">Easily share cards without wasting money</h3>
-              <p style="color: rgba(0,0,0,0.6); line-height: 1.46; font-size: 16px;">There is no need to print multiple things. Your digital cards can act as your name card, your fliers and even a poster </p>
+            <div style="padding: 8px 12px; padding-bottom: 28px; text-align: left;">
+              <h3 class="h-card-md" style="font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #0A0A0A;">Share multiple cards without waste!</h3>
+              <p style="color: rgba(0,0,0,0.6); line-height: 1.46; font-size: 18px;">No printing, no reprints — update your Deqly instantly and share your cards freely & without limits.</p>
             </div>
             <div class="feat-f4-img-wrap">
               <img src="brand_assets/Deqly-Illustration.png" alt="Deqly illustration" class="feat-f4-img" />
@@ -654,7 +657,7 @@
     <div class="container">
 
       <div style="text-align: center; margin-bottom: 56px;">
-        <h2 class="h-showcase" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Deqly is for anyone who has a story</h2>
+        <h2 class="h-showcase" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Deqly is for anyone who has a story to tell</h2>
         <p style="font-size: 20px; color: rgba(10,10,10,0.5); max-width: 700px; margin: 14px auto 0; line-height: 1.2;">When you're networking & have a story to tell - Deqly is for you! Check out the examples below</p>
       </div>
 
@@ -731,25 +734,25 @@
     <div class="container" style="max-width: 900px;">
 
       <div style="text-align: center; margin-bottom: 56px;">
-        <div class="pill" style="background: rgba(76,201,240,0.08); border: 1px solid rgba(76,201,240,0.2); color: #4CC9F0; margin: 0 auto 18px; width: fit-content;">So easy it's actually crazy</div>
-        <h2 class="h-how" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Create a Deqly card<br/><span style="color: #4CC9F0;">in under 3 minutes</span></h2>
+        <div class="pill" style="background: rgba(76,201,240,0.08); border: 1px solid rgba(76,201,240,0.2); color: #4CC9F0; margin: 0 auto 18px; width: fit-content; font-size: 17px;">So easy it's actually crazy</div>
+        <h2 class="h-how" style="font-weight: 700; letter-spacing: -0.04em; color: #0A0A0A; line-height: 1.1;">Create cards in<br/><span style="color: #4CC9F0;">just a few steps</span></h2>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
-          <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,56,38,0.08); border: 1px solid rgba(255,56,38,0.18); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #FF3826; margin-bottom: 20px;">1</div>
-          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A;">Sign up free</h3>
-          <p style="color: rgba(10,10,10,0.5); font-size: 14px; line-height: 1.7;">No credit card. No commitment. Just your email and you're in.</p>
+          <img src="brand_assets/How-to-1.png" alt="" class="how-to-img" style="width: 40%; height: auto; border-radius: 0px; display: block; margin-bottom: 15px;" />
+          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A; font-size: 20px;">Sign up free</h3>
+          <p style="color: rgba(10,10,10,0.5); font-size: 16px; line-height: 1.7;">Just enter your email — we’ll send you a magic link to get started, no passwords needed.</p>
         </div>
         <div class="step-card">
-          <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(124,77,255,0.08); border: 1px solid rgba(124,77,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #7C4DFF; margin-bottom: 20px;">2</div>
-          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A;">Design your card</h3>
-          <p style="color: rgba(10,10,10,0.5); font-size: 14px; line-height: 1.7;">Pick a style, add your info and links, make it unmistakably yours.</p>
+          <img src="brand_assets/How-to-2.png" alt="" class="how-to-img" style="width: 40%; height: auto; border-radius: 0px; display: block; margin-bottom: 15px;" />
+          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A; font-size: 20px;">Create a deck</h3>
+          <p style="color: rgba(10,10,10,0.5); font-size: 16px; line-height: 1.7;">Make it yours! Choose your style, pick your card type and build your cards one at a time!</p>
         </div>
         <div class="step-card">
-          <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(204,255,51,0.12); border: 1px solid rgba(204,255,51,0.3); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #7a9c00; margin-bottom: 20px;">3</div>
-          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A;">Share everywhere</h3>
-          <p style="color: rgba(10,10,10,0.5); font-size: 14px; line-height: 1.7;">Tap, scan, or send a link. Your card works wherever you need it.</p>
+          <img src="brand_assets/How-to-3.png" alt="" class="how-to-img" style="width: 40%; height: auto; border-radius: 0px; display: block; margin-bottom: 15px;" />
+          <h3 class="h-card-sm" style="font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; color: #0A0A0A; font-size: 20px;">Share your Deqly!</h3>
+          <p style="color: rgba(10,10,10,0.5); font-size: 16px; line-height: 1.7;">Send it through a link or your QR code, your cards are ready to make an impact!</p>
         </div>
       </div>
 
@@ -758,13 +761,12 @@
 
   <!-- ════════════════════ FINAL CTA ════════════════════ -->
   <section class="section-pad" style="background: #0A0A0A; text-align: center; position: relative; overflow: hidden;">
-    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,56,38,0.09) 0%, transparent 70%); pointer-events: none;"></div>
     <div class="container" style="max-width: 680px; position: relative;">
-      <div class="pill" style="background: rgba(255,56,38,0.12); border: 1px solid rgba(255,56,38,0.25); color: #FF3826; margin: 0 auto 24px; width: fit-content;">It's free to start</div>
-      <h2 class="h-cta" style="font-weight: 700; letter-spacing: -0.04em; color: #fff; line-height: 1.05; margin-bottom: 20px;">Stop handing out<br/>boring cards.</h2>
-      <p style="font-size: 18px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 360px; margin: 0 auto 36px;">Your network deserves better. Make your first Deqly card — takes 3 minutes.</p>
-      <a href="#" class="btn-lime">Create my card for free ✦</a>
-      <div style="margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.25);">No credit card required · Cancel anytime</div>
+      <div class="pill" style="background: rgba(255,56,38,0.12); border: 1px solid rgba(255,56,38,0.25); color: #FF3826; margin: 0 auto 24px; width: fit-content; font-size: 17px;">It's free to start</div>
+      <h2 class="h-cta" style="font-weight: 700; letter-spacing: -0.04em; color: #fff; line-height: 1.10; margin-bottom: 15px;">Make a bigger impact today!</h2>
+      <p style="font-size: 18px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 360px; margin: 0 auto 36px;">Create and share a Deqly today! There is too much you in one card.</p>
+      <a href="#" class="btn-lime">Create my card for free</a>
+      <div>
     </div>
   </section>
 
