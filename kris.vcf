@@ -6,5 +6,7 @@ ORG:Deqly cards
 TITLE:Founder / Creative Lead
 TEL;TYPE=CELL:+6585315578
 EMAIL:kristofer@deqly.com
-URL:https://www.deqly.com
+URL;TYPE=Website:https://www.deqly.com
+URL;TYPE=Deqly Cards:https://kris-kappa.vercel.app/
+URL;TYPE=Portfolio:https://krismiguel.com
 END:VCARD
