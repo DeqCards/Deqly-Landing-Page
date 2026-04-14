@@ -781,11 +781,42 @@
   <!-- ════════════════════ FINAL CTA ════════════════════ -->
   <section class="section-pad" style="background: #0A0A0A; text-align: center; position: relative; overflow: hidden;">
     <div class="container" style="max-width: 680px; position: relative;">
-      <div class="pill" style="background: rgba(255,56,38,0.12); border: 1px solid rgba(255,56,38,0.25); color: #fa5252; margin: 0 auto 24px; width: fit-content; font-size: 17px;">It's free to start</div>
+      <div class="pill" style="background: rgba(255,56,38,0.12); border: 1px solid rgba(255,56,38,0.25); color: #fa5252; margin: 0 auto 24px; width: fit-content; font-size: 17px;">It starts FREE!</div>
       <h2 class="h-cta" style="font-weight: 700; letter-spacing: -0.04em; color: #fff; line-height: 1.10; margin-bottom: 15px;">Make a bigger impact today!</h2>
       <p style="font-size: 18px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 360px; margin: 0 auto 36px;">Create and share a Deqly today! There is too much you in one card.</p>
       <a href="#" class="btn-lime">Beta coming soon!</a>
-      <div>
+
+      <form onsubmit="handleContact(event)" action="https://formspree.io/f/xojyvawa" method="POST" style="margin-top: 48px; display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin-left: auto; margin-right: auto;">
+        <input
+          id="contact-email"
+          type="email"
+          name="email"
+          placeholder="Your email"
+          required
+          style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 14px 18px; font-size: 15px; color: #fff; outline: none; transition: border-color 0.2s ease; font-family: inherit;"
+          onfocus="this.style.borderColor='rgba(255,255,255,0.3)'"
+          onblur="this.style.borderColor='rgba(255,255,255,0.1)'"
+        />
+        <textarea
+          id="contact-question"
+          name="message"
+          placeholder="Your question"
+          required
+          rows="4"
+          style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 14px 18px; font-size: 15px; color: #fff; outline: none; resize: none; transition: border-color 0.2s ease; font-family: inherit;"
+          onfocus="this.style.borderColor='rgba(255,255,255,0.3)'"
+          onblur="this.style.borderColor='rgba(255,255,255,0.1)'"
+        ></textarea>
+        <button
+          type="submit"
+          style="width: 100%; background: #fff; color: #0a0a0a; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; padding: 14px; border-radius: 100px; border: none; cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease; font-family: inherit;"
+          onmouseover="this.style.opacity='0.85'; this.style.transform='scale(1.02)'"
+          onmouseout="this.style.opacity='1'; this.style.transform='scale(1)'"
+          onmousedown="this.style.transform='scale(0.98)'"
+          onmouseup="this.style.transform='scale(1.02)'">
+          Send message
+        </button>
+      </form>
     </div>
   </section>
 
@@ -794,6 +825,10 @@
     <div class="container">
       <div style="text-align: center;">
         <img src="brand_assets/Logo.png" alt="Deqly" style="height: 24px; filter: brightness(0) invert(1); opacity: 0.75; display: block; margin: 0 auto;" />
+        <div style="display: flex; justify-content: center; gap: 24px; margin-top: 20px;">
+          <a href="terms.html" style="font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Terms & Conditions</a>
+          <a href="privacy.html" style="font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Privacy Policy</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -820,6 +855,31 @@
   </script>
 
   <script>
+    /* Contact form — Formspree */
+    function handleContact(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn  = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          btn.textContent = 'Message sent!';
+          form.reset();
+        } else {
+          btn.textContent = 'Something went wrong. Try again.';
+          btn.disabled = false;
+        }
+      }).catch(function() {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+      });
+    }
+
     /* Showcase desktop click-to-cycle with flip */
     document.querySelectorAll('.showcase-img-card[data-frames]').forEach(function(card) {
       var frames = JSON.parse(card.getAttribute('data-frames'));
