@@ -173,11 +173,13 @@
       100% { rotate: 2deg; }
     }
     .card-fan-wrapper {
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 270px;
       height: 432px;
       overflow: visible;
-      margin-left: 20px;
     }
     .fan-icon {
       position: absolute;
@@ -445,7 +447,7 @@
         padding-bottom: 40px;
       }
       .hero-heading { grid-column: 1; grid-row: auto; order: 1; padding-bottom: 0; }
-      .hero-right   { grid-column: 1; grid-row: auto; order: 2; height: 355px; width: 100%; margin: 0; padding-top: 10px; margin-bottom: 16px; overflow: visible; }
+      .hero-right   { grid-column: 1; grid-row: auto; order: 2; height: 355px; width: 100%; margin: 0; padding-top: 10px; margin-bottom: 60px; overflow: visible; }
       .hero-body    { grid-column: 1; grid-row: auto; order: 3; padding-top: 0; }
       .card-fan     { width: 205px; height: 309px; margin-left: 0; overflow: visible; }
       .card-fan-img { width: 205px; }
@@ -473,7 +475,7 @@
       .section-pad { padding-top: 50px; padding-bottom: 64px; }
 
       /* Hero */
-      .hero-right { height: 355px; margin: 0; padding-top: 10px; margin-bottom: 16px; overflow: visible; }
+      .hero-right { height: 355px; margin: 0; padding-top: 10px; margin-bottom: 60px; overflow: visible; }
       .hero-body  { padding-top: 0; }
       .card-fan     { width: 205px; height: 309px; margin-left: 0; overflow: visible; }
       .card-fan-img { width: 205px; }
@@ -520,7 +522,7 @@
     ═══════════════════════════════════════ */
     @media (max-width: 429px) {
       .h-hero { font-size: 53px; }
-      .hero-right { height: 320px; }
+      .hero-right { height: 320px; margin-bottom: 60px; }
       .card-fan     { width: 180px; height: 272px; }
       .card-fan-img { width: 180px; }
       .card-fan-wrapper { width: 180px; height: 272px; }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Collected Deqlys</title>
+  <link rel="icon" type="image/png" sizes="120x120" href="brand_assets/Deqly-Main-Logo.png" />
+  <link rel="shortcut icon" href="brand_assets/Deqly-Main-Logo.png" />
+  <link rel="apple-touch-icon" href="brand_assets/Deqly-Main-Logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f5f4f2;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100dvh;
+      max-width: 430px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 100px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 56px 20px 16px;
+    }
+    .header-text h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+    .header-text p {
+      font-size: 13px;
+      color: #999;
+      margin-top: 2px;
+    }
+    .avatar {
+      width: 38px;
+      height: 38px;
+      background: #fa5252;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ── Kris Card ── */
+    .kris-card {
+      margin: 8px 20px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .kris-card:active { transform: scale(0.98); }
+    .kris-card img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── Section ── */
+    .section-header {
+      padding: 28px 20px 10px;
+    }
+    .section-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+    .section-header p {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    /* ── Collection Cards ── */
+    .collected-card {
+      margin: 0 20px 12px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .collected-card:active { transform: scale(0.98); }
+    .collected-card img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── Sticky Scan Button ── */
+    .scan-btn-wrap {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 430px;
+      padding: 16px 20px 32px;
+      background: linear-gradient(to top, #f5f4f2 60%, transparent);
+      display: flex;
+      justify-content: center;
+    }
+    .scan-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #fa5252;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .scan-btn:hover { opacity: 0.9; transform: scale(1.02); }
+    .scan-btn:active { transform: scale(0.97); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="page-header">
+    <div class="header-text">
+      <h1>Your Deqly</h1>
+      <p>Share your Deqly to anyone</p>
+    </div>
+    <div class="avatar">K</div>
+  </div>
+
+  <!-- Kris Card -->
+  <div class="kris-card" onclick="window.location.href='kris.html'">
+    <img src="brand_assets/Collection-page-Sample.png" alt="Kristofer Miguel" />
+  </div>
+
+  <!-- Collection Section -->
+  <div class="section-header">
+    <h3>Collection</h3>
+    <p>Recently seen Deqlys</p>
+  </div>
+
+  <!-- Collected Cards -->
+  <div class="collected-card">
+    <img src="brand_assets/Collection-page-Sample2.png" alt="Ronnie Wang" />
+  </div>
+
+  <div class="collected-card">
+    <img src="brand_assets/Collection-page-Sample3.png" alt="Selene Juliana" />
+  </div>
+
+  <div class="collected-card">
+    <img src="brand_assets/Collection-page-Sample4.png" alt="Card 4" />
+  </div>
+
+  <div class="collected-card">
+    <img src="brand_assets/Collection-page-Sample5.png" alt="Card 5" />
+  </div>
+
+  <div class="collected-card">
+    <img src="brand_assets/Collection-page-Sample6.png" alt="Card 6" />
+  </div>
+
+  <!-- Scan Button -->
+  <div class="scan-btn-wrap">
+    <button class="scan-btn" onclick="window.location.href='https://deqly.com'">
+      End of user journey
+    </button>
+  </div>
+
+</body>
+</html>

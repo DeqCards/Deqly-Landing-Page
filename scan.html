@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Scan Deqly</title>
+  <link rel="icon" type="image/png" sizes="120x120" href="brand_assets/Deqly-Main-Logo.png" />
+  <link rel="shortcut icon" href="brand_assets/Deqly-Main-Logo.png" />
+  <link rel="apple-touch-icon" href="brand_assets/Deqly-Main-Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f5f4f2;
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100dvh;
+      max-width: 430px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Back button ── */
+    .back-btn {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 52px 20px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(10,10,10,0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover { color: #0a0a0a; }
+
+    /* ── Content ── */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 28px 48px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .headline {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+      line-height: 1.25;
+      max-width: 260px;
+      margin-bottom: 32px;
+    }
+
+    .qr-image-wrap {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      margin-bottom: 32px;
+    }
+    .qr-image-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    .subtext {
+      font-size: 16px;
+      color: rgba(10,10,10,0.45);
+      line-height: 1.65;
+      max-width: 260px;
+      margin-bottom: 48px;
+    }
+
+    /* ── Deqly icon ── */
+    .deqly-icon {
+      margin-top: auto;
+      opacity: 0.2;
+    }
+    .deqly-icon img {
+      height: 32px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="collection.html" class="back-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+
+  <div class="content">
+    <p class="headline">Scan another's Deqly QR code and start collecting</p>
+
+    <div class="qr-image-wrap">
+      <img src="brand_assets/Scan-QRCode.png" alt="Scan a Deqly QR code" />
+    </div>
+
+    <p class="subtext">Scanning their collection will automatically add their Deqly to your collection</p>
+
+    <button onclick="window.location.href='ronnie.html'" style="display:inline-flex; align-items:center; gap:8px; background:#7c5cfc; color:#fff; font-size:15px; font-weight:600; letter-spacing:-0.01em; padding:14px 28px; border-radius:100px; border:none; cursor:pointer; font-family:inherit; margin-bottom:32px; transition:opacity 0.2s ease, transform 0.2s ease;"
+      onmouseover="this.style.opacity='0.85'; this.style.transform='scale(1.03)'"
+      onmouseout="this.style.opacity='1'; this.style.transform='scale(1)'"
+      onmousedown="this.style.transform='scale(0.97)'"
+      onmouseup="this.style.transform='scale(1.03)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>
+      Scan Deqly
+    </button>
+
+  </div>
+
+</body>
+</html>

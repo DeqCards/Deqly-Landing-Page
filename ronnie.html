@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kris — Deqly</title>
+  <title>Ronnie — Deqly</title>
   <link rel="icon" type="image/png" href="brand_assets/Deqly-Main-Logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -122,48 +122,44 @@
 </head>
 <body>
 
-  <!-- Header -->
   <main>
     <div class="page-header">
-      <a href="collection.html"><img src="brand_assets/Deqly-Icon.png" alt="Deqly Icon" style="cursor:pointer;" /></a>
-      <h1>Kristofer Miguel</h1>
+      <img src="brand_assets/Deqly-Icon.png" alt="Deqly Icon" />
+      <h1>Ronnie Wang</h1>
       <p>Powered by Deqly</p>
     </div>
-    <div class="carousel-wrap" id="krisCarousel">
+    <div class="carousel-wrap" id="ronnieCarousel">
       <div class="carousel-clip">
-        <div class="carousel-track" id="krisTrack">
+        <div class="carousel-track" id="ronnieTrack">
           <div class="carousel-slide">
-            <img src="brand_assets/Kris-Card-1.png" alt="Kris Card 1" draggable="false" />
+            <img src="brand_assets/Card-02.png" alt="Ronnie Card 1" draggable="false" />
           </div>
           <div class="carousel-slide">
-            <img src="brand_assets/Kris-Card-2.png" alt="Kris Card 2" draggable="false" />
+            <img src="brand_assets/Web-Sample-Frame-02.png" alt="Ronnie Card 2" draggable="false" />
           </div>
           <div class="carousel-slide">
-            <img src="brand_assets/Kris-Card-3.png" alt="Kris Card 3" draggable="false" />
-          </div>
-          <div class="carousel-slide">
-            <img src="brand_assets/Kris-Card-4.png" alt="Kris Card 4" draggable="false" />
+            <img src="brand_assets/Web-Sample-Frame-021.png" alt="Ronnie Card 3" draggable="false" />
           </div>
         </div>
       </div>
 
-      <div class="carousel-dots" id="krisDots">
+      <div class="carousel-dots" id="ronnieDots">
         <div class="carousel-dot active" data-idx="0"></div>
         <div class="carousel-dot" data-idx="1"></div>
         <div class="carousel-dot" data-idx="2"></div>
-        <div class="carousel-dot" data-idx="3"></div>
       </div>
 
       <div style="text-align:center; margin-top: 24px; display:flex; flex-direction:column; align-items:center; gap:12px;">
-        <a href="kris.vcf" download="Kristofer-Miguel.vcf"
-           style="display:inline-flex; align-items:center; gap:8px; background:#fa5252; color:#fff; font-size:15px; font-weight:600; letter-spacing:-0.01em; padding:14px 28px; border-radius:100px; text-decoration:none; transition: opacity 0.2s ease, transform 0.2s ease;"
+        <button
+           onclick="window.location.href='collected-deqlys.html'"
+           style="display:inline-flex; align-items:center; gap:8px; background:#fa5252; color:#fff; font-size:15px; font-weight:600; letter-spacing:-0.01em; padding:14px 28px; border-radius:100px; border:none; cursor:pointer; font-family:inherit; transition: opacity 0.2s ease, transform 0.2s ease;"
            onmouseover="this.style.opacity='0.85'; this.style.transform='scale(1.03)'"
            onmouseout="this.style.opacity='1'; this.style.transform='scale(1)'"
            onmousedown="this.style.transform='scale(0.97)'"
            onmouseup="this.style.transform='scale(1.03)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Save to Contacts
-        </a>
+        </button>
         <a href="https://deqly.com" target="_blank" rel="noopener"
            style="color:#0a0a0a; font-size:14px; font-weight:500; text-decoration:underline; text-underline-offset:3px; transition: opacity 0.2s ease;"
            onmouseover="this.style.opacity='0.5'"
@@ -174,18 +170,16 @@
     </div>
   </main>
 
-  <!-- Footer -->
-
   <footer>
     <img src="brand_assets/Logo.png" alt="Deqly" />
   </footer>
 
   <script>
     (function() {
-      var wrap  = document.getElementById('krisCarousel');
-      var track = document.getElementById('krisTrack');
-      var dots  = document.querySelectorAll('#krisDots .carousel-dot');
-      var total = 4;
+      var wrap  = document.getElementById('ronnieCarousel');
+      var track = document.getElementById('ronnieTrack');
+      var dots  = document.querySelectorAll('#ronnieDots .carousel-dot');
+      var total = 3;
       var gap   = 20;
       var current = 0;
       var startX = 0, startY = 0, isDragging = false, dragDelta = 0;
