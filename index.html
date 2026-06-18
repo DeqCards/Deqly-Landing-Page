@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deqly — Too much you in one card</title>
+  <meta name="description" content="You're more than a name and number. Deqly lets you create multiple digital cards with pages to tell your story, personality, and work experience — all in one shareable profile." />
+  <meta name="author" content="Deqly" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://deqly.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
@@ -21,8 +25,6 @@
   <meta name="twitter:description" content="You're more than a name and number. Deqly lets you create multiple digital cards with pages to tell your story, personality, and work experience — all in one shareable profile." />
   <meta name="twitter:image"       content="https://deqly.com/brand_assets/Deqly-Share-Banner.jpg" />
   <meta name="twitter:image:alt"   content="Deqly digital card illustration" />
-
-  <script src="/seo.js"></script>
 
   <link rel="icon" type="image/png" sizes="120x120" href="brand_assets/Deqly-Main-Logo.png" />
   <link rel="shortcut icon" href="brand_assets/Deqly-Main-Logo.png" />
@@ -128,18 +130,18 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     }
 
-    /* ── Card fan — subtle breathing rotation ── */
+    /* ── Desktop card fan ── */
     @keyframes fanBreath {
-      0%, 100% { transform: translate(-50%, -50%) rotate(0deg) translateY(0px); }
-      50%       { transform: translate(-50%, -50%) rotate(1.5deg) translateY(-6px); }
+      0%, 100% { rotate: 0deg;     transform: translateY(0px); }
+      50%       { rotate: 1.5deg;  transform: translateY(-6px); }
     }
     @keyframes fanBreathRight {
-      0%, 100% { transform: translate(-50%, -50%) rotate(15deg) translateY(0px); }
-      50%       { transform: translate(-50%, -50%) rotate(16.5deg) translateY(-5px); }
+      0%, 100% { rotate: 15deg;    transform: translateY(0px); }
+      50%       { rotate: 16.5deg; transform: translateY(-5px); }
     }
     @keyframes fanBreathLeft {
-      0%, 100% { transform: translate(-50%, -50%) rotate(-15deg) translateY(0px); }
-      50%       { transform: translate(-50%, -50%) rotate(-16.5deg) translateY(-5px); }
+      0%, 100% { rotate: -15deg;   transform: translateY(0px); }
+      50%       { rotate: -16.5deg;transform: translateY(-5px); }
     }
 
     .card-fan {
@@ -147,6 +149,7 @@
       width: 270px;
       height: 432px;
     }
+    /* translate is an individual property — never touched by animation */
     .card-fan-img {
       position: absolute;
       width: 270px;
@@ -154,29 +157,50 @@
       display: block;
       top: 50%;
       left: 50%;
+      translate: -50% -50%;
       transform-origin: 50% 100%;
     }
-    /* Card-03: back-left */
     .card-c3 {
       z-index: 1;
-      transform: translate(-50%, -50%) rotate(-15deg) translateY(0px);
+      rotate: -15deg;
       animation: fanBreathLeft 6s ease-in-out infinite 0.4s both;
       box-shadow: 0 16px 40px rgba(0,0,0,0.18);
     }
-    /* Card-02: back-right */
     .card-c2 {
       z-index: 2;
-      transform: translate(-50%, -50%) rotate(15deg) translateY(0px);
+      rotate: 15deg;
       animation: fanBreathRight 6s ease-in-out infinite 0.2s both;
       box-shadow: 0 16px 40px rgba(0,0,0,0.18);
     }
-    /* Card-01: front center */
     .card-c1 {
       z-index: 3;
-      transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
+      rotate: 0deg;
       animation: fanBreath 6s ease-in-out infinite 0s both;
       box-shadow: 0 24px 64px rgba(0,0,0,0.22), 0 4px 16px rgba(0,0,0,0.12);
     }
+
+    /* ── Mobile card fan (static, no complex math) ── */
+    @keyframes mobCardFloat {
+      0%, 100% { transform: rotate(0deg) translateY(0px); }
+      50%       { transform: rotate(0deg) translateY(-8px); }
+    }
+    .hero-fan-mobile {
+      display: none;
+      position: relative;
+      width: 200px;
+      height: 320px;
+      margin: 0 auto;
+    }
+    .hero-fan-mobile img {
+      position: absolute;
+      width: 200px;
+      border-radius: 14px;
+      top: 0; left: 0;
+      transform-origin: 50% 100%;
+    }
+    .mob-c3 { z-index: 1; transform: rotate(-15deg); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .mob-c2 { z-index: 2; transform: rotate(15deg);  box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .mob-c1 { z-index: 3; transform: rotate(0deg);   box-shadow: 0 18px 48px rgba(0,0,0,0.2); animation: mobCardFloat 4s ease-in-out infinite; }
 
     /* ── Card fan wrapper + floating icons ── */
     @keyframes iconFloat {
@@ -472,13 +496,9 @@
       .hero-heading { grid-column: 1; grid-row: auto; order: 1; padding-bottom: 0; }
       .hero-right   { grid-column: 1; grid-row: auto; order: 2; height: 355px; width: 100%; margin: 0; padding-top: 10px; margin-bottom: 60px; overflow: visible; }
       .hero-body    { grid-column: 1; grid-row: auto; order: 3; padding-top: 0; }
-      .card-fan     { width: 205px; height: 309px; margin-left: 0; overflow: visible; }
-      .card-fan-img { width: 205px; }
-      .card-fan-wrapper { width: 205px; height: 309px; }
-      .fan-icon { width: 34px; height: 34px; }
-      .fan-icon-tr { width: 40px; height: 40px; top: 28px; right: -16px; }
-      .fan-icon-ml { width: 44px; height: 44px; top: 92px; left: -16px; }
-      .fan-icon-br { bottom: 32px; right: -16px; }
+      /* Switch to mobile fan */
+      .card-fan-wrapper { display: none; }
+      .hero-fan-mobile  { display: block; }
       /* Features */
       .features-grid { grid-template-columns: 1fr 1fr; }
       .feat-span2 { grid-column: span 2; }
@@ -500,13 +520,6 @@
       /* Hero */
       .hero-right { height: 355px; margin: 0; padding-top: 10px; margin-bottom: 60px; overflow: visible; }
       .hero-body  { padding-top: 0; }
-      .card-fan     { width: 205px; height: 309px; margin-left: 0; overflow: visible; }
-      .card-fan-img { width: 205px; }
-      .card-fan-wrapper { width: 205px; height: 309px; }
-      .fan-icon { width: 34px; height: 34px; }
-      .fan-icon-tr { width: 40px; height: 40px; top: 28px; right: -16px; }
-      .fan-icon-ml { width: 44px; height: 44px; top: 92px; left: -16px; }
-      .fan-icon-br { bottom: 32px; right: -16px; }
       .hero-heading h1 { text-align: center; }
       .hero-body p { text-align: center; }
       .hero-btns { flex-direction: column; align-items: center; width: fit-content; margin: 0 auto; }
@@ -644,17 +657,23 @@
         <!-- ── RIGHT COLUMN ── -->
         <div class="hero-right">
 
-          <!-- Fanned card stack with floating icons -->
+          <!-- Desktop: animated card fan with floating icons -->
           <div class="card-fan-wrapper">
             <div class="card-fan">
               <img src="brand_assets/Card-03.png?v=1775192365" alt="Deqly card" class="card-fan-img card-c3" />
               <img src="brand_assets/Card-02.png?v=1775192365" alt="Deqly card" class="card-fan-img card-c2" />
               <img src="brand_assets/Card-01.png" alt="Deqly card" class="card-fan-img card-c1" />
             </div>
-            <!-- Floating brand icons -->
             <img src="brand_assets/Small-Icon-02.png" alt="" class="fan-icon fan-icon-tr" />
             <img src="brand_assets/Small-Icon-03.png" alt="" class="fan-icon fan-icon-ml" />
             <img src="brand_assets/Small-Icon-01.png" alt="" class="fan-icon fan-icon-br" />
+          </div>
+
+          <!-- Mobile: simple static fan, no complex math -->
+          <div class="hero-fan-mobile">
+            <img src="brand_assets/Card-03.png?v=1775192365" alt="Deqly card" class="mob-c3" />
+            <img src="brand_assets/Card-02.png?v=1775192365" alt="Deqly card" class="mob-c2" />
+            <img src="brand_assets/Card-01.png"              alt="Deqly card" class="mob-c1" />
           </div>
 
       
