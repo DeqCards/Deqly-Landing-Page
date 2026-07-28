@@ -21,8 +21,8 @@ var CONTENT = {
   // ── Hero ────────────────────────────────────────
   hero: {
     heading: {
-      plain:         "Too much you",
-      gradient:      "for one card",
+      plain:         "Leave an impact,",
+      gradient:      "not just a contact",
       gradientFirst: false,
       lineBreak:     true,
     },
@@ -155,8 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Nav
   set('nav-cta', CONTENT.nav.cta);
 
-  // Hero
-  setHTML('hero-heading', buildHeading(CONTENT.hero.heading));
+  // Hero — custom-built (not buildHeading) so mobile can break onto 3 lines
+  // at different word boundaries than desktop's 2-line break.
+  setHTML('hero-heading', 'Leave an<br class="br-mobile"/> impact,<br class="br-desktop"/> <span class="grad-text">not just<br class="br-mobile"/> a contact</span>');
   set('hero-body',      CONTENT.hero.body);
   set('hero-cta',       CONTENT.hero.cta);
   set('hero-secondary', CONTENT.hero.secondary);
